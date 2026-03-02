@@ -1,7 +1,13 @@
-import { initAnimations } from './global/animations.js';
-import { initNavigation } from './global/navigation.js';
+(function () {
+    const safeCall = (fn) => {
+        if (typeof fn === 'function') fn();
+    };
 
-document.addEventListener('DOMContentLoaded', () => {
-    initAnimations();
-    initNavigation();
-});
+    document.addEventListener('DOMContentLoaded', () => {
+        const api = window.WebPost || {};
+        safeCall(api.initAnimations);
+        safeCall(api.initNavigation);
+        safeCall(api.initWhatsApp);
+        safeCall(api.initSwiper);
+    });
+})();

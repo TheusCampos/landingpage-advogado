@@ -7,11 +7,30 @@
     <title>Martins & Associados | Advocacia de Alto Padrão</title>
     
     <!-- CSS Local -->
-    <link href="assets/css/style.css" rel="stylesheet">
+    <link href="assets/css/index.css" rel="stylesheet">
     
     <!-- Bibliotecas Externas -->
     <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        gold: 'var(--gold)',
+                        cream: 'var(--cream)',
+                        'dark-green': 'var(--dark-green)',
+                    },
+                    fontFamily: {
+                        serif: ['Playfair Display', 'serif'],
+                        sans: ['Plus Jakarta Sans', 'sans-serif'],
+                    }
+                }
+            }
+        }
+    </script>
     <link href="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
+
     
     <!-- Fontes -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -98,7 +117,7 @@
 
             <div class="hidden lg:block relative" data-aos="zoom-in-left" data-aos-duration="1500">
                 <div class="relative z-10 modern-mask overflow-hidden border-8 border-gold/10">
-                    <img src="https://i.pinimg.com/1200x/2c/68/82/2c6882d0037a4bed9b298964fa81038c.jpg" alt="Advogado"
+                    <img src="./assets/imagens/advogado.png" alt="Advogado"
                         class="w-full h-[600px] object-cover">
                 </div>
                 <!-- Elementos decorativos -->
@@ -109,19 +128,33 @@
     </section>
 
     <!-- Trusted By -->
-    <section class="bg-white py-12 border-b border-stone-100">
-        <div class="max-w-7xl mx-auto px-6 flex flex-wrap justify-between items-center gap-8 opacity-40">
-            <p class="text-xs font-bold uppercase tracking-widest text-stone-400">Reconhecido por:</p>
-            <span class="text-2xl font-serif font-bold">CHAMBERS</span>
-            <span class="text-2xl font-serif font-bold">THE LEGAL 500</span>
-            <span class="text-2xl font-serif font-bold">BEST LAWYERS</span>
-            <span class="text-2xl font-serif font-bold">OAB PREMIUM</span>
+    <section class="bg-white py-12 border-b border-stone-100 overflow-hidden">
+        <div class="max-w-7xl mx-auto px-6 flex flex-col md:flex-row items-center gap-8">
+            <p class="text-xs font-bold uppercase tracking-widest text-stone-400 shrink-0">Reconhecido por:</p>
+            
+            <div class="swiper trusted-swiper w-full md:w-auto flex-1">
+                <div class="swiper-wrapper items-center">
+                    <div class="swiper-slide !w-auto text-center md:text-left">
+                        <span class="text-2xl font-serif font-bold whitespace-nowrap">CHAMBERS</span>
+                    </div>
+                    <div class="swiper-slide !w-auto text-center md:text-left">
+                        <span class="text-2xl font-serif font-bold whitespace-nowrap">THE LEGAL 500</span>
+                    </div>
+                    <div class="swiper-slide !w-auto text-center md:text-left">
+                        <span class="text-2xl font-serif font-bold whitespace-nowrap">BEST LAWYERS</span>
+                    </div>
+                    <div class="swiper-slide !w-auto text-center md:text-left">
+                        <span class="text-2xl font-serif font-bold whitespace-nowrap">OAB PREMIUM</span>
+                    </div>
+                </div>
+            </div>
         </div>
     </section>
 
     <!-- Sobre o Escritório -->
-    <section id="sobre" class="py-16 md:py-24 bg-white">
-        <div class="max-w-7xl mx-auto px-6 grid lg:grid-cols-2 gap-12 lg:gap-24 items-center">
+    <section id="sobre" class="relative py-16 md:py-24 bg-white overflow-hidden">
+        <img src="./assets/imagens/folha-dourada.png" alt="Folha dourada decorativa" class="absolute top-10 -right-10 w-32 md:w-48 blur-[2px] opacity-80 z-0 pointer-events-none rotate-12">
+        <div class="relative z-10 max-w-7xl mx-auto px-6 grid lg:grid-cols-2 gap-12 lg:gap-24 items-center">
             <div class="relative" data-aos="fade-up">
                 <div class="rounded-[30px] md:rounded-[60px] rounded-tl-none overflow-hidden shadow-2xl">
                     <img src="https://images.unsplash.com/photo-1505664194779-8beaceb93744?auto=format&fit=crop&q=80&w=1000"
@@ -523,7 +556,12 @@
 
     <!-- Scripts -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.js"></script>
-    <script src="assets/js/script.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+    <script defer src="assets/js/global/animations.js"></script>
+    <script defer src="assets/js/global/navigation.js"></script>
+    <script defer src="assets/js/global/whatsapp.js"></script>
+    <script defer src="assets/js/global/carousel.js"></script>
+    <script defer src="assets/js/index.js"></script>
 </body>
 
 </html>
